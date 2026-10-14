@@ -125,6 +125,34 @@ export function HomePage({ locale }: { locale: Locale }) {
           </div>
         </section>
 
+        {/* Sobre mí */}
+        <section className="sec" id="sobre-mi">
+          <div className="container about">
+            <div className="about-photo">
+              <img src="/israel-vargas.webp" alt={t.photoAlt} width={400} height={400} />
+            </div>
+            <div className="about-body">
+              <span className="pill">{t.aboutPill}</span>
+              <h2>
+                {t.aboutTitleA}
+                <span className="grad-text">{t.aboutTitleB}</span>
+              </h2>
+              {t.aboutText.map((p) => (
+                <p key={p.slice(0, 24)} className="about-text">{p}</p>
+              ))}
+              <div className="about-areas">
+                {t.aboutAreas.map((a) => (
+                  <div key={a.tag}>
+                    <code>{a.tag}</code>
+                    <h3>{a.title}</h3>
+                    <p>{a.text}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Proyectos */}
         <section className="sec" id="proyectos">
           <div className="container">

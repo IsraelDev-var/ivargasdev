@@ -10,6 +10,7 @@ export function SiteHeader({ locale, altHref }: { locale: Locale; altHref: AltHr
   const t = dict[locale];
   const home = homeHref(locale);
   const items = [
+    ["sobre-mi", t.nav.about],
     ["proyectos", t.nav.projects],
     ["experiencia", t.nav.experience],
     ["formacion", t.nav.education],

@@ -123,6 +123,23 @@ img { max-width: 100%; }
 .sec-h { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px; margin-bottom: 30px; }
 .sec-h h2 { font-size: clamp(30px, 3.8vw, 42px); margin-top: 14px; }
 
+/* Sobre mí */
+.about { display: grid; grid-template-columns: 320px 1fr; gap: 56px; align-items: start; }
+.about-photo { position: relative; padding: 4px; border-radius: 24px; background: var(--grad); }
+.about-photo::after {
+  content: ""; position: absolute; top: -6px; left: -6px; width: 22px; height: 22px;
+  border-radius: 5px; background: var(--orange);
+}
+.about-photo img { display: block; width: 100%; height: auto; border-radius: 20px; }
+.about-body h2 { font-size: clamp(28px, 3.6vw, 40px); line-height: 1.1; margin: 14px 0 18px; }
+.about-text { color: var(--fg-2); font-size: 17px; max-width: 62ch; }
+.about-text + .about-text { margin-top: 14px; }
+.about-areas { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 30px; }
+.about-areas > div { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; min-width: 0; }
+.about-areas code { font: 600 11px var(--mono); color: var(--green); background: #34d39e14; padding: 2px 6px; border-radius: 4px; letter-spacing: 0.06em; }
+.about-areas h3 { font-size: 17px; letter-spacing: -0.01em; margin: 10px 0 4px; }
+.about-areas p { font-size: 14px; color: var(--mut); }
+
 /* Proyectos */
 .tabs { display: flex; flex-wrap: wrap; gap: 6px; margin: -10px 0 22px; }
 .tabs button {
@@ -288,6 +305,8 @@ img { max-width: 100%; }
   .span-2, .span-3 { grid-column: span 1; }
   .span-6, .pgrid > .proj:last-child:nth-child(odd) { grid-column: span 2; }
   .site-nav ul { display: none; }
+  .about { grid-template-columns: 220px 1fr; gap: 32px; }
+  .about-areas { grid-template-columns: 1fr; }
   .shot, .shot-mobile, .shot-vertical { grid-column: span 3; }
   .lang { margin-left: auto; }
   .xp, .case-row { gap: 16px; }
@@ -295,6 +314,8 @@ img { max-width: 100%; }
 @media (max-width: 600px) {
   .kpis, .certs, .skills, .pgrid, .features, .case-kpis { grid-template-columns: 1fr; }
   .span-6, .pgrid > .proj:last-child:nth-child(odd) { grid-column: span 1; }
+  .about { grid-template-columns: 1fr; }
+  .about-photo { max-width: 220px; }
   .shot { grid-column: span 6; }
   .shot-mobile, .shot-vertical { grid-column: span 3; }
   .hero { padding-top: 48px; }

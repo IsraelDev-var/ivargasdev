@@ -25,7 +25,7 @@ export function formatMonth(ym: string, locale: Locale) {
 
 export const dict = {
   es: {
-    nav: { projects: "Proyectos", experience: "Experiencia", education: "Formación", skills: "Habilidades", contact: "Contacto" },
+    nav: { about: "Sobre mí", projects: "Proyectos", experience: "Experiencia", education: "Formación", skills: "Habilidades", contact: "Contacto" },
     switchLang: "EN",
     switchLangLabel: "View in English",
     heroPill: "Desarrollador de software · Santo Domingo, RD",
@@ -47,6 +47,19 @@ export const dict = {
       { value: "80+", label: "requerimientos en un solo diseño de e-commerce" },
       { value: "15", label: "certificaciones, diplomados y cursos" },
     ],
+    aboutPill: "Sobre mí",
+    aboutTitleA: "Hola, soy Israel. ",
+    aboutTitleB: "Construyo software que ordena negocios.",
+    aboutText: [
+      "Soy desarrollador de software en República Dominicana. De día programo Microsoft Dynamics 365 Business Central en SCADOM (Scania Dominicana); por mi cuenta, como i/dev, diseño y construyo webs y sistemas para negocios.",
+      "Mi forma de trabajar es simple: primero entiendo el problema y diseño el sistema completo (requerimientos, datos, riesgos) y después programo. Así cada decisión tiene una razón y el resultado aguanta cuando el negocio crece.",
+    ],
+    aboutAreas: [
+      { tag: "ERP", title: "Business Central", text: "Extensiones en AL, reportes RDLC e integraciones para la operación diaria de una empresa." },
+      { tag: "BACKEND", title: "APIs y datos", text: "APIs en C# y .NET, SQL Server, PostgreSQL y Azure, con Clean Architecture." },
+      { tag: "WEB", title: "Webs para negocios", text: "Sitios rápidos y bilingües que traen clientes: cotizaciones, calculadoras y SEO." },
+    ],
+    photoAlt: "Israel Vargas Castro, desarrollador de software",
     projectsPill: "Proyectos",
     projectsTitleA: "Trabajo ",
     projectsTitleB: "real",
@@ -84,7 +97,7 @@ export const dict = {
     caseCta: "¿Quieres algo parecido para tu negocio?",
   },
   en: {
-    nav: { projects: "Projects", experience: "Experience", education: "Education", skills: "Skills", contact: "Contact" },
+    nav: { about: "About", projects: "Projects", experience: "Experience", education: "Education", skills: "Skills", contact: "Contact" },
     switchLang: "ES",
     switchLangLabel: "Ver en español",
     heroPill: "Software developer · Santo Domingo, DR",
@@ -106,6 +119,19 @@ export const dict = {
       { value: "80+", label: "requirements in a single e-commerce design" },
       { value: "15", label: "certifications, programs and courses" },
     ],
+    aboutPill: "About",
+    aboutTitleA: "Hi, I'm Israel. ",
+    aboutTitleB: "I build software that brings order to businesses.",
+    aboutText: [
+      "I'm a software developer in the Dominican Republic. By day I build on Microsoft Dynamics 365 Business Central at SCADOM (Scania Dominicana); on my own, as i/dev, I design and build websites and systems for businesses.",
+      "My approach is simple: first I understand the problem and design the whole system (requirements, data, risks), then I write the code. That way every decision has a reason and the result holds up as the business grows.",
+    ],
+    aboutAreas: [
+      { tag: "ERP", title: "Business Central", text: "AL extensions, RDLC reports and integrations for a company's day-to-day operations." },
+      { tag: "BACKEND", title: "APIs and data", text: "APIs in C# and .NET, SQL Server, PostgreSQL and Azure, with Clean Architecture." },
+      { tag: "WEB", title: "Websites for businesses", text: "Fast, bilingual sites that bring in customers: quotes, calculators and SEO." },
+    ],
+    photoAlt: "Israel Vargas Castro, software developer",
     projectsPill: "Projects",
     projectsTitleA: "",
     projectsTitleB: "Real work",
