@@ -202,6 +202,7 @@ img { max-width: 100%; }
 .certs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
 .cert { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; display: flex; flex-direction: column; gap: 8px; min-width: 0; }
 .seal { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 10px; border: 1px solid #2f4a80; background: #4c8dff14; font: 700 12px var(--mono); color: var(--blue-soft); }
+.cert .badge { width: 64px; height: 64px; object-fit: contain; }
 .cert h4 { font: 700 15.5px/1.35 var(--sans); letter-spacing: -0.01em; }
 .cert small { font-size: 13px; color: var(--mut); }
 .cert .v { font: 11.5px/1.5 var(--mono); color: var(--green); margin-top: auto; padding-top: 6px; }

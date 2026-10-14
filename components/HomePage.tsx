@@ -14,13 +14,15 @@ type Credential = {
   inicio?: string;
   fin?: string;
   url?: string;
+  insignia?: string;
 };
 
 /** Sigla para el sello de cada credencial. */
 function seal(c: Credential) {
   const known: [RegExp, string][] = [
-    [/sql certification/i, "SQL"],
+    [/sql (certification )?associate/i, "SQL"],
     [/mongodb/i, "MDB"],
+    [/c\+\+/i, "C++"],
     [/cisco/i, "CSC"],
     [/full stack/i, "FS"],
     [/inteligencia artificial/i, "IA"],
@@ -28,8 +30,9 @@ function seal(c: Credential) {
     [/tecn[oó]logo/i, "TDS"],
     [/react/i, "RE"],
     [/html/i, "WEB"],
+    [/javascript/i, "JS"],
     [/proyectos/i, "PM"],
-    [/architecture/i, "SA"],
+    [/architect/i, "SA"],
   ];
   return known.find(([re]) => re.test(`${c.nombre} ${c.emisor}`))?.[1] ?? c.nombre.slice(0, 2).toUpperCase();
 }
@@ -44,7 +47,11 @@ function CredentialCard({ c, locale }: { c: Credential; locale: Locale }) {
   }
   return (
     <div className="cert">
-      <div className="seal" aria-hidden="true">{seal(c)}</div>
+      {c.insignia ? (
+        <img className="badge" src={c.insignia} alt="" width={64} height={64} loading="lazy" decoding="async" />
+      ) : (
+        <div className="seal" aria-hidden="true">{seal(c)}</div>
+      )}
       <h4>{c.nombre}</h4>
       <small>{c.emisor}</small>
       <span className="v">

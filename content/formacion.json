@@ -1,5 +1,5 @@
 {
-  "fuente": "LinkedIn (Licencias y certificaciones, Educación) + CV, leído el 2026-10-14",
+  "fuente": "LinkedIn, CV y carpeta de certificados en Google Drive, revisados el 2026-10-14",
   "certificaciones": [
     {
       "nombre": "SQL Certification Associate",
@@ -7,23 +7,31 @@
       "expedicion": "2026-09",
       "vencimiento": "2029-09",
       "idCredencial": "36a1b656-17a0-49e4-a0b1-91392962c0bc",
-      "url": "https://certiplus.io/certificate/36a1b656-17a0-49e4-a0b1-91392962c0bc"
+      "url": "https://certiplus.io/certificate/36a1b656-17a0-49e4-a0b1-91392962c0bc",
+      "insignia": "/insignias/certiplus-sql-associate.webp"
+    },
+    {
+      "nombre": "SQL Associate",
+      "emisor": "DataCamp",
+      "expedicion": "2026-08"
     },
     {
       "nombre": "From Relational Model (SQL) to MongoDB's Document Model",
       "emisor": "MongoDB",
       "expedicion": "2026-10",
-      "url": "https://www.credly.com/badges/feda2441-87da-47a3-9335-1ac29aaccce2"
+      "url": "https://www.credly.com/badges/feda2441-87da-47a3-9335-1ac29aaccce2",
+      "insignia": "/insignias/mongodb-relational-to-document.webp"
     },
     {
       "nombre": "MongoDB Overview: Core Concepts and Architecture",
       "emisor": "MongoDB",
       "expedicion": "2026-09",
-      "url": "https://www.credly.com/badges/05a391b3-1ce8-49d0-ad72-72239da96ace"
+      "url": "https://www.credly.com/badges/05a391b3-1ce8-49d0-ad72-72239da96ace",
+      "insignia": "/insignias/mongodb-overview.webp"
     },
     {
-      "nombre": "PC Hardware and Software",
-      "emisor": "Cisco Networking Academy",
+      "nombre": "IT Essentials: PC Hardware and Software",
+      "emisor": "Cisco Networking Academy · ITLA",
       "expedicion": "2023-12",
       "idCredencial": "9f82359e-85b0-42c4-803c-158cb520c187",
       "url": "https://www.netacad.com/certificates/?issuanceId=9f82359e-85b0-42c4-803c-158cb520c187"
@@ -59,6 +67,30 @@
   ],
   "cursos": [
     {
+      "nombre": "Software Architect Mindset Workshop",
+      "emisor": "Dev Senior Code",
+      "expedicion": "2026-08",
+      "idCredencial": "01M0JADBTSW839JDHTJ0ZQ5PZ0"
+    },
+    {
+      "nombre": "Fundamentos en Gestión de Proyectos",
+      "emisor": "soylider.net",
+      "expedicion": "2026-09",
+      "idCredencial": "K2ZNNO-CE004909"
+    },
+    {
+      "nombre": "JavaScript TOTAL - De Cero a Programador Web",
+      "emisor": "Udemy · 26.5 horas",
+      "expedicion": "2025-10",
+      "idCredencial": "UC-eac75f78-03b5-4601-ae1f-4e6a12488cfa",
+      "url": "https://www.udemy.com/certificate/UC-eac75f78-03b5-4601-ae1f-4e6a12488cfa/"
+    },
+    {
+      "nombre": "CPA: Programming Essentials in C++",
+      "emisor": "Cisco Networking Academy · C++ Institute",
+      "expedicion": "2024-05"
+    },
+    {
       "nombre": "Front-End Development with React",
       "emisor": "Academlo",
       "expedicion": "2023-09",
@@ -69,16 +101,6 @@
       "emisor": "Academlo",
       "expedicion": "2023-06",
       "idCredencial": "30074634831017"
-    },
-    {
-      "nombre": "Fundamentos en Gestión de Proyectos",
-      "emisor": "soylider.net",
-      "expedicion": "2026-09",
-      "idCredencial": "K2ZNNO-CE004909"
-    },
-    {
-      "nombre": "Software Architecture Workshop",
-      "emisor": "Dev Senior Code"
     }
   ]
 }
