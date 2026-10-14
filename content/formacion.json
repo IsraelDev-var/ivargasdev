@@ -1,0 +1,84 @@
+{
+  "fuente": "LinkedIn (Licencias y certificaciones, Educación) + CV, leído el 2026-10-14",
+  "certificaciones": [
+    {
+      "nombre": "SQL Certification Associate",
+      "emisor": "Certiplus",
+      "expedicion": "2026-09",
+      "vencimiento": "2029-09",
+      "idCredencial": "36a1b656-17a0-49e4-a0b1-91392962c0bc",
+      "url": "https://certiplus.io/certificate/36a1b656-17a0-49e4-a0b1-91392962c0bc"
+    },
+    {
+      "nombre": "From Relational Model (SQL) to MongoDB's Document Model",
+      "emisor": "MongoDB",
+      "expedicion": "2026-10",
+      "url": "https://www.credly.com/badges/feda2441-87da-47a3-9335-1ac29aaccce2"
+    },
+    {
+      "nombre": "MongoDB Overview: Core Concepts and Architecture",
+      "emisor": "MongoDB",
+      "expedicion": "2026-09",
+      "url": "https://www.credly.com/badges/05a391b3-1ce8-49d0-ad72-72239da96ace"
+    },
+    {
+      "nombre": "PC Hardware and Software",
+      "emisor": "Cisco Networking Academy",
+      "expedicion": "2023-12",
+      "idCredencial": "9f82359e-85b0-42c4-803c-158cb520c187",
+      "url": "https://www.netacad.com/certificates/?issuanceId=9f82359e-85b0-42c4-803c-158cb520c187"
+    }
+  ],
+  "diplomados": [
+    {
+      "nombre": "Desarrollo Web Full Stack - Nivel Avanzado",
+      "emisor": "Instituto Dominicano de las Telecomunicaciones (INDOTEL)",
+      "expedicion": "2026-09",
+      "idCredencial": "0xae6a671f419c219e1ec0c5ba110d92cedfe5764dc7cc1d3cb17980883a23c8e7",
+      "url": "https://base.easscan.org/attestation/view/0xae6a671f419c219e1ec0c5ba110d92cedfe5764dc7cc1d3cb17980883a23c8e7"
+    },
+    {
+      "nombre": "Python e Inteligencia Artificial",
+      "emisor": "Samsung Innovation Campus",
+      "expedicion": "2024-07",
+      "idCredencial": "001032",
+      "descripcion": "Proyecto final: modelo predictivo de estadísticas de jugadores de la NBA."
+    },
+    {
+      "nombre": "Inglés de Inmersión para la Competitividad",
+      "emisor": "Ministerio de Educación Superior, Ciencia y Tecnología (MESCyT)",
+      "expedicion": "2023-02",
+      "descripcion": "Inglés intensivo de nivel básico a avanzado, 1 año."
+    },
+    {
+      "nombre": "Tecnólogo en Desarrollo de Software",
+      "emisor": "Instituto Tecnológico de las Américas (ITLA)",
+      "inicio": "2023-09",
+      "fin": "2026-04"
+    }
+  ],
+  "cursos": [
+    {
+      "nombre": "Front-End Development with React",
+      "emisor": "Academlo",
+      "expedicion": "2023-09",
+      "idCredencial": "35560401933569"
+    },
+    {
+      "nombre": "Foundations in HTML, CSS and JavaScript",
+      "emisor": "Academlo",
+      "expedicion": "2023-06",
+      "idCredencial": "30074634831017"
+    },
+    {
+      "nombre": "Fundamentos en Gestión de Proyectos",
+      "emisor": "soylider.net",
+      "expedicion": "2026-09",
+      "idCredencial": "K2ZNNO-CE004909"
+    },
+    {
+      "nombre": "Software Architecture Workshop",
+      "emisor": "Dev Senior Code"
+    }
+  ]
+}
