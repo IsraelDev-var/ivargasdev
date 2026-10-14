@@ -37,7 +37,11 @@ export function ProjectPage({ project: p, locale }: { project: Project; locale: 
                 </div>
               </div>
               <div className="case-visual">
-                <ProjectVisual kind={p.visual} locale={locale} />
+                {p.portada ? (
+                  <img src={p.portada} alt={p.galeria?.[0] ? tr(p.galeria[0].alt, locale) : p.nombre} width={880} height={550} />
+                ) : (
+                  <ProjectVisual kind={p.visual} locale={locale} />
+                )}
               </div>
             </div>
             {p.cifras.length ? (
@@ -85,6 +89,22 @@ export function ProjectPage({ project: p, locale }: { project: Project; locale: 
                       <li key={a.es}>{tr(a, locale)}</li>
                     ))}
                   </ul>
+                </div>
+              </div>
+            ) : null}
+
+            {p.galeria?.length ? (
+              <div className="case-row case-row-gallery">
+                <p className="label">{t.caseGallery}</p>
+                <div className="gallery">
+                  {p.galeria.map((g) => (
+                    <figure key={g.src} className={`shot shot-${g.tipo}`}>
+                      <a href={g.src} target="_blank" rel="noopener noreferrer">
+                        <img src={g.src} alt={tr(g.alt, locale)} width={g.w} height={g.h} loading="lazy" decoding="async" />
+                      </a>
+                      <figcaption>{tr(g.alt, locale)}</figcaption>
+                    </figure>
+                  ))}
                 </div>
               </div>
             ) : null}

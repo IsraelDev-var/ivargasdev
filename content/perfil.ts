@@ -80,8 +80,8 @@ export const experiencia: ExperienceItem[] = [
       {
         tag: "WEB",
         texto: {
-          es: "Webs para TEL’AVIV Business Group, Ecovatio Energy, E&V Soluciones Integrales y Unique.",
-          en: "Websites for TEL’AVIV Business Group, Ecovatio Energy, E&V Soluciones Integrales and Unique.",
+          es: "Webs para TEL’AVIV Business Group, Ecovatio Energy y E&V Soluciones Integrales, y la tienda online de U.NIQUE.",
+          en: "Websites for TEL’AVIV Business Group, Ecovatio Energy and E&V Soluciones Integrales, and the U.NIQUE online store.",
         },
       },
       {

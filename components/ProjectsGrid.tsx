@@ -54,7 +54,13 @@ export function ProjectsGrid({ projects, locale }: { projects: Project[]; locale
       <div className="pgrid">
         {ordered.map((p, i) => (
           <article key={p.slug} className={`proj span-${cols[i]}`}>
-            <ProjectVisual kind={p.visual} locale={locale} />
+            {p.portada ? (
+              <div className="cover">
+                <img src={p.portada} alt="" width={880} height={550} loading="lazy" decoding="async" />
+              </div>
+            ) : (
+              <ProjectVisual kind={p.visual} locale={locale} />
+            )}
             <div className="pbody">
               <div className="kind">
                 <span>

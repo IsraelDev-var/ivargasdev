@@ -1,4 +1,5 @@
 import type { L } from "@/lib/i18n";
+import { galerias, type Imagen } from "./galerias";
 
 export type ProjectVisualKind = "map" | "fx" | "calc" | "chat" | "arch" | "layers" | "bars";
 
@@ -6,7 +7,7 @@ export type Project = {
   slug: string;
   nombre: string;
   grupo: "cliente" | "sistema";
-  estado: "online" | "dev" | "done" | "design";
+  estado: "online" | "dev" | "done" | "prototype";
   tipo: L;
   resumen: L;
   reto: L;
@@ -19,6 +20,10 @@ export type Project = {
   destacado?: boolean;
   /** Oculto en el sitio hasta completar su contenido. */
   borrador?: boolean;
+  /** Capturas del proyecto (se completa desde galerias.ts). */
+  galeria?: Imagen[];
+  /** Imagen 16:10 para la tarjeta. */
+  portada?: string;
 };
 
 export const proyectos: Project[] = [
@@ -269,121 +274,80 @@ export const proyectos: Project[] = [
     visual: "chat",
   },
   {
-    slug: "tienda-print-on-demand",
-    nombre: "Tienda print-on-demand",
-    grupo: "sistema",
-    estado: "design",
-    tipo: { es: "E-commerce a medida", en: "Custom e-commerce" },
+    slug: "unique",
+    nombre: "U.NIQUE",
+    grupo: "cliente",
+    estado: "prototype",
+    tipo: { es: "E-commerce de moda · EE. UU.", en: "Fashion e-commerce · USA" },
     resumen: {
-      es: "El comprador paga, el pedido va solo a producción y recibe su tracking sin que nadie toque nada. Más de 80 requerimientos y un plan de 16 semanas.",
-      en: "The buyer pays, the order goes straight to production and they get tracking without anyone touching it. 80+ requirements and a 16-week plan.",
+      es: "Tienda online para una marca de ropa en Estados Unidos: un prototipo navegable de 28 pantallas y la arquitectura para que cada pedido pagado vaya solo a producción con Printify.",
+      en: "Online store for a US clothing brand: a 28-screen clickable prototype and the architecture that sends every paid order straight to production with Printify.",
     },
     reto: {
-      es: "Suena simple, pero no lo es. ¿Qué pasa si el pago se confirma dos veces? ¿Si el proveedor no responde? ¿Si el cliente quiere cancelar 10 minutos después de pagar? En un sistema que maneja dinero, lo difícil es que nunca cobre dos veces ni pierda un pedido.",
-      en: "It sounds simple, but it isn't. What if a payment is confirmed twice? What if the supplier doesn't respond? What if the customer cancels 10 minutes after paying? In a system that handles money, the hard part is never charging twice or losing an order.",
+      es: "En moda, la foto y la prenda venden; todo lo demás tiene que quitarse del camino. Detrás de la tienda hay un sistema que maneja dinero: ¿qué pasa si el pago se confirma dos veces, si el proveedor no responde o si el cliente cancela 10 minutos después de pagar? Lo difícil no es que funcione, es que nunca cobre dos veces ni pierda un pedido.",
+      en: "In fashion, the photo and the garment sell; everything else has to get out of the way. Behind the store is a system that handles money: what if a payment is confirmed twice, the supplier doesn't respond, or the customer cancels 10 minutes after paying? The hard part isn't making it work, it's never charging twice or losing an order.",
     },
     funcionalidades: [
       {
-        titulo: { es: "Requerimientos", en: "Requirements" },
-        texto: { es: "Más de 80 funcionalidades y reglas de negocio.", en: "More than 80 features and business rules." },
+        titulo: { es: "Sistema de diseño", en: "Design system" },
+        texto: { es: "Paleta neutra, tipografía editorial y cero adornos.", en: "Neutral palette, editorial typography and no ornaments." },
       },
       {
-        titulo: { es: "Arquitectura", en: "Architecture" },
+        titulo: { es: "Colección", en: "Collection" },
         texto: {
-          es: "Cómo se conectan la tienda, la API, los pagos y la producción.",
-          en: "How the store, the API, payments and production connect.",
+          es: "La foto cambia al pasar el mouse y “Quick add” agrega sin salir de la página.",
+          en: "Photos swap on hover and “Quick add” adds to the bag without leaving the page.",
         },
       },
       {
-        titulo: { es: "Modelo de datos", en: "Data model" },
-        texto: { es: "Cada tabla de la base de datos.", en: "Every table in the database." },
-      },
-      {
-        titulo: { es: "Plan y riesgos", en: "Plan and risks" },
+        titulo: { es: "Producto", en: "Product" },
         texto: {
-          es: "16 semanas, con lo que puede salir mal y cómo evitarlo.",
-          en: "16 weeks, with what can go wrong and how to prevent it.",
+          es: "Galería grande, talla y color visuales, y reseñas solo de compradores verificados.",
+          en: "Large gallery, visual size and color pickers, and reviews from verified buyers only.",
         },
       },
       {
-        titulo: { es: "Escalabilidad", en: "Scalability" },
+        titulo: { es: "Checkout", en: "Checkout" },
         texto: {
-          es: "Cómo crece el sistema cuando crecen las ventas.",
-          en: "How the system grows as sales grow.",
+          es: "Una sola página, compra como invitado y pago seguro con Stripe.",
+          en: "One page, guest checkout and secure payment with Stripe.",
+        },
+      },
+      {
+        titulo: { es: "Automatización", en: "Automation" },
+        texto: {
+          es: "Cada pedido pagado va solo a Printify, se produce bajo pedido y el tracking llega al cliente.",
+          en: "Every paid order goes straight to Printify, is made on demand and tracking reaches the customer.",
+        },
+      },
+      {
+        titulo: { es: "Móvil", en: "Mobile" },
+        texto: {
+          es: "Pensada para el pulgar, con el botón de compra siempre visible.",
+          en: "Built for the thumb, with the buy button always visible.",
         },
       },
     ],
     arquitectura: {
       texto: {
-        es: "La tienda en Next.js habla con una API en .NET. Stripe confirma el pago por webhook, un worker procesa la cola y envía el pedido a Printify, que devuelve el tracking.",
-        en: "The Next.js store talks to a .NET API. Stripe confirms payment via webhook, a worker processes the queue and sends the order to Printify, which returns tracking.",
+        es: "Antes de programar documenté más de 80 requerimientos, la arquitectura, el modelo de datos, un plan de 16 semanas con sus riesgos y cómo escala el sistema cuando crecen las ventas.",
+        en: "Before coding I documented 80+ requirements, the architecture, the data model, a 16-week plan with its risks and how the system scales as sales grow.",
       },
       puntos: [
-        { es: "Cliente → Next.js (tienda + admin) → API .NET", en: "Client → Next.js (store + admin) → .NET API" },
-        { es: "Stripe → webhook de pago → API", en: "Stripe → payment webhook → API" },
-        { es: "API → cola → Worker → Printify (producción y envío)", en: "API → queue → Worker → Printify (production and shipping)" },
-        { es: "PostgreSQL como fuente de verdad de pedidos y pagos", en: "PostgreSQL as the source of truth for orders and payments" },
+        { es: "Cliente → Next.js (tienda + admin) → API ASP.NET Core", en: "Client → Next.js (store + admin) → ASP.NET Core API" },
+        { es: "Stripe confirma el pago por webhook; cada operación es idempotente", en: "Stripe confirms payment via webhook; every operation is idempotent" },
+        { es: "Worker → Printify con ventana de retención para cancelar a tiempo", en: "Worker → Printify with a hold window to allow cancellations" },
+        { es: "Reconciliación periódica como red de seguridad entre pagos y pedidos", en: "Periodic reconciliation as a safety net between payments and orders" },
+        { es: "PostgreSQL como fuente de verdad; admin con roles y MFA", en: "PostgreSQL as the source of truth; admin with roles and MFA" },
       ],
     },
     cifras: [
+      { valor: "28", etiqueta: { es: "pantallas navegables", en: "clickable screens" } },
       { valor: "80+", etiqueta: { es: "requerimientos definidos", en: "requirements defined" } },
-      { valor: "5", etiqueta: { es: "diagramas del sistema", en: "system diagrams" } },
       { valor: "16", etiqueta: { es: "semanas de plan", en: "weeks of planning" } },
     ],
-    stack: ["Next.js", "ASP.NET Core", "PostgreSQL", "Stripe", "Printify"],
+    stack: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "ASP.NET Core", "PostgreSQL", "Stripe", "Printify"],
     visual: "arch",
-  },
-  {
-    slug: "medicion-neta-solar",
-    nombre: "Medición Neta Solar",
-    grupo: "sistema",
-    estado: "done",
-    tipo: { es: "Plataforma .NET + Azure", en: ".NET + Azure platform" },
-    resumen: {
-      es: "Control de medición neta para sistemas fotovoltaicos: producción, consumo y excedentes, con informes mensuales automáticos.",
-      en: "Net-metering control for solar systems: production, consumption and surplus, with automatic monthly reports.",
-    },
-    reto: {
-      es: "Quien tiene paneles solares necesita saber cuánto produce, cuánto consume y cuánto le queda a favor cada mes, sin hacer cálculos a mano.",
-      en: "Solar owners need to know how much they produce, how much they consume and how much surplus they have each month, without doing the math by hand.",
-    },
-    funcionalidades: [
-      {
-        titulo: { es: "Registro de energía", en: "Energy records" },
-        texto: { es: "Producción, consumo y balance energético.", en: "Production, consumption and energy balance." },
-      },
-      {
-        titulo: { es: "Cálculo de excedentes", en: "Surplus calculation" },
-        texto: { es: "Los excedentes se calculan automáticamente.", en: "Surplus is calculated automatically." },
-      },
-      {
-        titulo: { es: "Informes mensuales", en: "Monthly reports" },
-        texto: { es: "Reportes generados cada mes.", en: "Reports generated every month." },
-      },
-      {
-        titulo: { es: "API segura", en: "Secure API" },
-        texto: { es: "API REST con autenticación JWT.", en: "REST API with JWT authentication." },
-      },
-    ],
-    arquitectura: {
-      texto: {
-        es: "Desplegada en Azure con servicios PaaS, bajo Clean Architecture y principios SOLID.",
-        en: "Deployed on Azure using PaaS services, following Clean Architecture and SOLID principles.",
-      },
-      puntos: [
-        { es: "Azure App Service para la API", en: "Azure App Service for the API" },
-        { es: "Azure SQL Database para los datos", en: "Azure SQL Database for data" },
-        { es: "Azure Storage para archivos e informes", en: "Azure Storage for files and reports" },
-        { es: "Entity Framework Core como capa de datos", en: "Entity Framework Core as the data layer" },
-      ],
-    },
-    cifras: [
-      { valor: "3", etiqueta: { es: "servicios de Azure", en: "Azure services" } },
-      { valor: "JWT", etiqueta: { es: "autenticación de la API", en: "API authentication" } },
-      { valor: "SOLID", etiqueta: { es: "con Clean Architecture", en: "with Clean Architecture" } },
-    ],
-    stack: ["ASP.NET Core", "C#", "EF Core", "Azure", "JWT"],
-    visual: "bars",
   },
   {
     slug: "medicita",
@@ -449,20 +413,14 @@ export const proyectos: Project[] = [
     stack: ["ASP.NET Core", "C#", "EF Core", "SQL Server", "JWT"],
     visual: "layers",
   },
-  {
-    slug: "unique",
-    nombre: "Unique",
-    grupo: "cliente",
-    estado: "online",
-    tipo: { es: "Web de cliente", en: "Client website" },
-    resumen: { es: "Pendiente de completar.", en: "To be completed." },
-    reto: { es: "", en: "" },
-    funcionalidades: [],
-    cifras: [],
-    stack: [],
-    visual: "chat",
-    borrador: true,
-  },
 ];
 
-export const proyectosPublicados = proyectos.filter((p) => !p.borrador);
+export const proyectosPublicados: Project[] = proyectos
+  .filter((p) => !p.borrador)
+  .map((p) => {
+    const galeria = galerias[p.slug];
+    if (!galeria) return p;
+    // Los diagramas no funcionan como portada de tarjeta: en ese caso se usa la ilustración del proyecto.
+    const portada = galeria[0].tipo === "diagrama" ? undefined : `/proyectos/${p.slug}/portada-card.webp`;
+    return { ...p, galeria, portada };
+  });
